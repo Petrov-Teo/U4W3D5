@@ -64,7 +64,7 @@ public class EditorialMaterialRental {
         return due_date;
     }
 
-    public void setDue_date(LocalDate due_date) {
+    public void setDue_date() {
         this.due_date = due_date;
     }
 

@@ -7,10 +7,7 @@
     <list default="true" id="82f5eb9c-b4dc-465b-889c-a0e939c239f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Editoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Editoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/EditorialMaterialRental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/EditorialMaterialRental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Magazine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Magazine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
