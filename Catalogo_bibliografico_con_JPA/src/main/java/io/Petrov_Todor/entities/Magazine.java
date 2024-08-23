@@ -4,14 +4,9 @@ import io.Petrov_Todor.enums.Periodicity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToMany;
-
-import java.util.List;
 
 @Entity
 public class Magazine extends Editoria {
-    @ManyToMany()
-    protected List<Authors> authors;
     @Enumerated(EnumType.STRING)
     protected Periodicity periodicity;
 
@@ -19,33 +14,23 @@ public class Magazine extends Editoria {
 
     }
 
-    public Magazine(String isbn_code, String title, int year_of_publication, int number_of_pages, List<Authors> authors, Periodicity periodicity) {
+    public Magazine(String isbn_code, String title, int year_of_publication, int number_of_pages, Periodicity periodicity) {
         super(isbn_code, title, year_of_publication, number_of_pages);
-        this.authors = authors;
         this.periodicity = periodicity;
-    }
-
-    public List<Authors> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<Authors> authors) {
-        this.authors = authors;
     }
 
     public Periodicity getPeriodicity() {
         return periodicity;
     }
 
-    public void setPeriodicity(Periodicity periodisity) {
-        this.periodicity = periodisity;
+    public void setPeriodicity(Periodicity periodicity) {
+        this.periodicity = periodicity;
     }
 
     @Override
     public String toString() {
         return "Magazine{" +
-                "authors=" + authors +
-                ", periodicity=" + periodicity +
+                "periodicity=" + periodicity +
                 '}';
     }
 }

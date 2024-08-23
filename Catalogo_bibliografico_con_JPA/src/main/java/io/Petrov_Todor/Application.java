@@ -65,12 +65,12 @@ public class Application {
         Authors authorFromDbMagazine2 = ad.findById("19605acf-b676-4610-8564-569e88d9dbff");
         Authors authorFromDbMagazine3 = ad.findById("19589056-cb87-4950-a010-9e86d82a216d");
         List<Authors> authorsList4 = Arrays.asList(authorFromDbMagazine1, authorFromDbMagazine2, authorFromDbMagazine3);
-        Magazine magazine1 = new Magazine("7845126654", fk.book().title(), 2024, 25, authorsList4, Periodicity.WEEKLY);
+        Magazine magazine1 = new Magazine("7845126654", fk.book().title(), 2024, 25, Periodicity.WEEKLY);
 //        ed.save(magazine1);
         //________________________________________________________________________________________________________________________________________
         Authors authorFromDbMagazine4 = ad.findById("472d3c8f-c1f0-4e1b-accc-8365f9bdeb4e");
         List<Authors> authorsList5 = Collections.singletonList(authorFromDbMagazine4);
-        Magazine magazine2 = new Magazine("89332514265", fk.book().title(), 2022, 56, authorsList4, Periodicity.MONTHLY);
+        Magazine magazine2 = new Magazine("89332514265", fk.book().title(), 2022, 56, Periodicity.MONTHLY);
 //        ed.save(magazine2);
 
 
@@ -89,7 +89,8 @@ public class Application {
 //        System.out.println(rental2);
 //        erd.save(rental2);
 
-      cl
+        Editoria bookfromdb = ed.findById("32099958-b5ad-40c0-b5b7-8097c072e3b6");
+        System.out.println(bookfromdb);
     }
 
 }

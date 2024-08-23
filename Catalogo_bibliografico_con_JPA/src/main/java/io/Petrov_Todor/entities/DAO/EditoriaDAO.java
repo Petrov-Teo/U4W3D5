@@ -4,8 +4,6 @@ import io.Petrov_Todor.entities.Editoria;
 import io.Petrov_Todor.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.NoResultException;
-import jakarta.persistence.Query;
 
 import java.util.UUID;
 
@@ -51,16 +49,5 @@ public class EditoriaDAO {
         System.out.println(id + " - E' stato eliminato!");
     }
 
-    public Editoria findByISBN(String ISBN) {
-        // Usa una query SQL nativa per cercare per ISBN
-        String sql = "SELECT * FROM Editoria WHERE isbn_code = :isbnCode";
-        Query query = em.createNativeQuery(sql, Editoria.class);
-        query.setParameter("isbnCode", ISBN);
 
-        try {
-            return (Editoria) query.getSingleResult();
-        } catch (NoResultException e) {
-            throw new NotFoundException("Editoria with ISBN " + ISBN + " not found.");
-        }
-    }
 }
