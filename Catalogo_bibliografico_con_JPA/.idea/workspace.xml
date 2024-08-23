@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82f5eb9c-b4dc-465b-889c-a0e939c239f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/Screenshot 2024-08-23 alle 11.32.59.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Authors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/DAO/AuthorsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/DAO/EditoriaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/DAO/EditorialMaterialRentalDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/DAO/UsersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/EditorialMaterialRental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Magazine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/enums/Periodicity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/enums/TypeBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/exceptions/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/io/Petrov_Todor/ApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Editoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Editoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/EditorialMaterialRental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/EditorialMaterialRental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Magazine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/Petrov_Todor/entities/Magazine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Petrov-Teo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Petrov-Teo/U4W3D5.git",
+    "accountId": "44c6c572-f89f-4682-9354-cf0324127566"
+  }
+}]]></component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>

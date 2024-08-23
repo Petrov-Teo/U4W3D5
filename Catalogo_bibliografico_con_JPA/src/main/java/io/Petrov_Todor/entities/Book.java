@@ -22,8 +22,8 @@ public class Book extends Editoria {
         super();
     }
 
-    public Book(String isbn_code, int year_of_publication, int number_of_pages, List<Authors> authors, TypeBooks type_book) {
-        super(isbn_code, year_of_publication, number_of_pages);
+    public Book(String isbn_code, String title, int year_of_publication, int number_of_pages, List<Authors> authors, TypeBooks type_book) {
+        super(isbn_code, title, year_of_publication, number_of_pages);
         this.authors = authors;
         this.type_book = type_book;
     }

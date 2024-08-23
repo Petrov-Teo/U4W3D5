@@ -11,14 +11,16 @@ public class Editoria {
     @GeneratedValue
     private UUID id;
     private String isbn_code;
+    private String title;
     private int year_of_publication;
     private int number_of_pages;
 
     public Editoria() {
     }
 
-    public Editoria(String isbn_code, int year_of_publication, int number_of_pages) {
+    public Editoria(String isbn_code, String title, int year_of_publication, int number_of_pages) {
         this.isbn_code = isbn_code;
+        this.title = title;
         this.year_of_publication = year_of_publication;
         this.number_of_pages = number_of_pages;
     }
@@ -34,6 +36,14 @@ public class Editoria {
 
     public void setIsbn_code(String isbn_code) {
         this.isbn_code = isbn_code;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getYear_of_publication() {
@@ -57,6 +67,7 @@ public class Editoria {
         return "Editoria{" +
                 "id=" + id +
                 ", isbn_code='" + isbn_code + '\'' +
+                ", title='" + title + '\'' +
                 ", year_of_publication=" + year_of_publication +
                 ", number_of_pages=" + number_of_pages +
                 '}';

@@ -27,7 +27,7 @@ public class EditorialMaterialRental {
         this.user_id = user_id;
         this.editoria_id = editoria_id;
         this.loan_start_date = loan_start_date;
-        this.due_date = due_date;
+        this.due_date = loan_start_date.plusDays(30);
         this.return_date = return_date;
     }
 
