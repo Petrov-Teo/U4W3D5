@@ -88,6 +88,8 @@ public class Application {
         rental1.setDue_date();
 //        System.out.println(rental2);
 //        erd.save(rental2);
+
+      cl
     }
 
 }
