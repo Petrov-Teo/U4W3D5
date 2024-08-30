@@ -1,11 +1,9 @@
 package io.Petrov_Todor.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,17 +15,19 @@ public class Authors {
     private String name;
     private String surname;
     private LocalDate date_of_birth;
-    @ManyToMany(mappedBy = "authors")
+
+    @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
     private List<Book> books;
 
     public Authors() {
-      
+
     }
 
-    public Authors(String name, String surname, LocalDate date_of_birth) {
+    public Authors(String name, String surname, String date_of_birth) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.name = name;
         this.surname = surname;
-        this.date_of_birth = date_of_birth;
+        this.date_of_birth = LocalDate.parse(date_of_birth, formatter);
     }
 
     public UUID getId() {
@@ -65,6 +65,7 @@ public class Authors {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", date_of_birth=" + date_of_birth +
+//                ", books=" + books +
                 '}';
     }
 }

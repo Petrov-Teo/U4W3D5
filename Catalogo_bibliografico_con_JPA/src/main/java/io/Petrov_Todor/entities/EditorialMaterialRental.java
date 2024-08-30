@@ -3,6 +3,7 @@ package io.Petrov_Todor.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 @Entity
@@ -23,12 +24,13 @@ public class EditorialMaterialRental {
     public EditorialMaterialRental() {
     }
 
-    public EditorialMaterialRental(Users user_id, Editoria editoria_id, LocalDate loan_start_date, LocalDate due_date, LocalDate return_date) {
+    public EditorialMaterialRental(Users user_id, Editoria editoria_id, String loan_start_date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.user_id = user_id;
         this.editoria_id = editoria_id;
-        this.loan_start_date = loan_start_date;
-        this.due_date = loan_start_date.plusDays(30);
-        this.return_date = return_date;
+        this.loan_start_date = LocalDate.parse(loan_start_date, formatter);
+        this.due_date = this.loan_start_date.plusDays(30);
+
     }
 
     public UUID getId() {
@@ -72,8 +74,9 @@ public class EditorialMaterialRental {
         return return_date;
     }
 
-    public void setReturn_date(LocalDate return_date) {
-        this.return_date = return_date;
+    public void setReturn_date(String return_date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.return_date = LocalDate.parse(return_date, formatter);
     }
 
     @Override

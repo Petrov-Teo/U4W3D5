@@ -1,7 +1,7 @@
 package io.Petrov_Todor.exceptions;
 
 public class NotFoundException extends RuntimeException {
-    public NotFoundException(String id) {
-        super("Il record con id" + id + "non è stato trovato");
+    public NotFoundException(String record) {
+        super("Il record " + record + "non è stato trovato");
     }
 }

@@ -8,11 +8,13 @@ import java.util.List;
 @Entity
 
 public class Book extends Editoria {
-    @ManyToMany()
+
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "book_authors",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id")
+
     )
     protected List<Authors> authors;
     @Enumerated(EnumType.STRING)
@@ -22,8 +24,8 @@ public class Book extends Editoria {
         super();
     }
 
-    public Book(String isbn_code, String title, int year_of_publication, int number_of_pages, List<Authors> authors, TypeBooks type_book) {
-        super(isbn_code, title, year_of_publication, number_of_pages);
+    public Book(String title, int year_of_publication, int number_of_pages, List<Authors> authors, TypeBooks type_book) {
+        super(title, year_of_publication, number_of_pages);
         this.authors = authors;
         this.type_book = type_book;
     }
@@ -49,6 +51,6 @@ public class Book extends Editoria {
         return "Book{" +
                 "authors=" + authors +
                 ", type_book=" + type_book +
-                '}';
+                "} " + super.toString();
     }
 }

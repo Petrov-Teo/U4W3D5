@@ -4,7 +4,10 @@ import io.Petrov_Todor.entities.Editoria;
 import io.Petrov_Todor.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
+import java.util.List;
 import java.util.UUID;
 
 public class EditoriaDAO {
@@ -47,7 +50,49 @@ public class EditoriaDAO {
         transaction.commit();
 
         System.out.println(id + " - E' stato eliminato!");
+
+    }
+
+    public List<Editoria> findAllEditoria() {
+        TypedQuery<Editoria> query = em.createQuery("SELECT a FROM Editoria a", Editoria.class);
+        return query.getResultList();
     }
 
 
+    public List<String> findAllISBN(String uuid) {
+        TypedQuery<String> query = em.createQuery("SELECT t.isbn_code FROM Book t", String.class);
+        return query.getResultList();
+    }
+
+    public void finByISBN(String isbn) {
+        System.out.println("------------------------------ SEARCH  BY ISBN -----------------------------------------");
+        System.out.println("Valore di ricerca: " + isbn.toUpperCase());
+
+        Query query = em.createQuery("SELECT a FROM Editoria a WHERE a.isbn_code = :isbn ");
+        query.setParameter("isbn", isbn);
+        throw new NotFoundException(isbn);
+    }
+
+    public void findByIsbnDelete(String isbn) {
+        System.out.println("------------------------------ SEARCH AND DELETE BY ISBN -----------------------------------------");
+        System.out.println("Valore di ricerca: " + isbn.toUpperCase());
+
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+
+        Query query = em.createQuery("DELETE FROM Editoria e WHERE e.isbn_code = :isbn");
+        query.setParameter("isbn", isbn);
+
+        int isbnDeleted = query.executeUpdate();
+
+        if (isbnDeleted == 0) {
+            transaction.rollback();
+            throw new NotFoundException("Elemento con ISBN " + isbn + " non trovato.");
+        }
+        transaction.commit();
+        System.out.println("Elemento eliminato con successo, numero di elementi eliminati: " + isbnDeleted);
+    }
 }
+
+
+

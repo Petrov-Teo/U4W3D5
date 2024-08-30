@@ -4,7 +4,9 @@ import io.Petrov_Todor.entities.Authors;
 import io.Petrov_Todor.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
 
+import java.util.List;
 import java.util.UUID;
 
 public class AuthorsDAO {
@@ -47,7 +49,32 @@ public class AuthorsDAO {
         transaction.commit();
 
         System.out.println(id + " - E' stato eliminato!");
+
+
+    }
+
+    public List<Authors> filtersAuthorsByName(String name) {
+        System.out.println("------------------------------ SEARCH BY AUTHORS -----------------------------------------");
+        System.out.println("Valore di ricerca: " + name.toUpperCase());
+        if (!name.trim().isEmpty()) {
+            TypedQuery<Authors> query = em.createQuery("SELECT a FROM Authors a WHERE LOWER (a.name) LIKE LOWER(:n) OR LOWER (a.surname) LIKE LOWER(:n)", Authors.class);
+            query.setParameter("n", "%" + name.toLowerCase() + "%");
+            List<Authors> results = query.getResultList();
+            if (results.isEmpty()) {
+                System.out.println("Nessun Autore trovato per il parametro di ricerca:" + name);
+            }
+            return results;
+        } else {
+            throw new NotFoundException("Nome non valido:" + name);
+        }
+
     }
 }
+
+
+
+
+
+
 
 

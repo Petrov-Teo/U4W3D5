@@ -14,8 +14,8 @@ public class Magazine extends Editoria {
 
     }
 
-    public Magazine(String isbn_code, String title, int year_of_publication, int number_of_pages, Periodicity periodicity) {
-        super(isbn_code, title, year_of_publication, number_of_pages);
+    public Magazine(String title, int year_of_publication, int number_of_pages, Periodicity periodicity) {
+        super(title, year_of_publication, number_of_pages);
         this.periodicity = periodicity;
     }
 
@@ -31,6 +31,6 @@ public class Magazine extends Editoria {
     public String toString() {
         return "Magazine{" +
                 "periodicity=" + periodicity +
-                '}';
+                "} " + super.toString();
     }
 }

@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.UUID;
 
 @Entity
@@ -22,12 +24,15 @@ public class Users {
     public Users() {
     }
 
-    public Users(String name, String surname, LocalDate date_of_birth, int card_number) {
+    public Users(String name, String surname, String date_of_birth) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Random random = new Random();
         this.name = name;
         this.surname = surname;
-        this.date_of_birth = date_of_birth;
-        this.card_number = card_number;
+        this.date_of_birth = LocalDate.parse(date_of_birth, formatter);
+        this.card_number = random.nextInt(1000, 9999);
     }
+
 
     public UUID getId() {
         return id;
