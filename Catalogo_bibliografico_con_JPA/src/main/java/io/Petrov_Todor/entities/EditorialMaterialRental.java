@@ -37,7 +37,6 @@ public class EditorialMaterialRental {
         return id;
     }
 
-
     public Users getUser_id() {
         return user_id;
     }
@@ -48,10 +47,6 @@ public class EditorialMaterialRental {
 
     public Editoria getEditoria_id() {
         return editoria_id;
-    }
-
-    public void setEditoria_id(Editoria editoria_id) {
-        this.editoria_id = editoria_id;
     }
 
     public LocalDate getLoan_start_date() {

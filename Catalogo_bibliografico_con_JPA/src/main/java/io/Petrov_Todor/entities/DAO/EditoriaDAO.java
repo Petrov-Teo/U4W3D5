@@ -92,6 +92,30 @@ public class EditoriaDAO {
         transaction.commit();
         System.out.println("Elemento eliminato con successo, numero di elementi eliminati: " + isbnDeleted);
     }
+
+    public List<Editoria> findByYearofPubblicaton(String year) {
+        System.out.println("------------------------------ SEARCH  BY YEAR OF PUBBLICATION -----------------------------------------");
+        System.out.println("Anno di ricerca: " + year);
+        TypedQuery<Editoria> query = em.createQuery("SELECT y FROM Editoria y WHERE y.year_of_publication = :year", Editoria.class);
+        query.setParameter("year", year);
+        return query.getResultList();
+    }
+
+    public List<Editoria> findByTitle(String str) {
+        System.out.println("------------------------------ SEARCH BY AUTHORS -----------------------------------------");
+        System.out.println("Valore di ricerca: " + str.toUpperCase());
+        if (!str.trim().isEmpty()) {
+            TypedQuery<Editoria> query = em.createQuery("SELECT a FROM Editoria a WHERE LOWER (a.title) LIKE LOWER(:n)", Editoria.class);
+            query.setParameter("n", "%" + str.toLowerCase() + "%");
+            List<Editoria> results = query.getResultList();
+            if (results.isEmpty()) {
+                System.out.println("Nessun Titolo trovato per il parametro di ricerca:" + str);
+            }
+            return results;
+        } else {
+            throw new NotFoundException("Nome non valido:" + str);
+        }
+    }
 }
 
 

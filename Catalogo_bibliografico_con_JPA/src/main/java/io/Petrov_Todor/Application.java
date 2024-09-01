@@ -158,28 +158,52 @@ public class Application {
 
         // CREAZIONE EDITORIA MATERIAL RENTAL ____________________________________________________________________________________________________________________________
         Users cliente1 = ud.findById("b9734921-6aef-4cba-bb3b-012853f8beee");
-        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+        Editoria bookRentals1 = ed.findById("cd9a052c-2398-41ea-9d4f-5fb171534c99"); //BOOK or MAGAZINE
+        //_____________________________________________________________________________________________
+        Users cliente2 = ud.findById("4a68126b-b9fc-4faa-8182-7a0289a3571e");
+        Editoria bookRentals2 = ed.findById("1d2639d3-8914-40e8-a537-25746a85e08d"); //BOOK or MAGAZINE
+        Editoria bookRentals3 = ed.findById("b1db5ea1-b4de-4d4b-aedf-e2d7f755b190");
+        //_____________________________________________________________________________________________
+//        Users cliente3 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente4 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente5 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente6 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente7 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente8 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente9 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
+//        Users cliente10 = ud.findById("");
+//        Editoria bookRentals = ed.findById("ba4fda61-8462-4f76-86df-5d785bc8ae00"); //BOOK or MAGAZINE
+//        //_____________________________________________________________________________________________
 
 
-        EditorialMaterialRental rental1 = new EditorialMaterialRental(cliente1, bookRentals, "25/03/2024");
-
+        EditorialMaterialRental rental1 = new EditorialMaterialRental(cliente1, bookRentals1, "02/09/2024");
+        EditorialMaterialRental rental2 = new EditorialMaterialRental(cliente2, bookRentals2, "01/09/2024");
+        EditorialMaterialRental rental3 = new EditorialMaterialRental(cliente2, bookRentals3, "31/08/2024");
 
 //        erd.save(rental1);
-
+//        erd.save(rental2);
+//        erd.save(rental3);
 
         // RESTITUZIONE MATERIAL RENTAL ________________________________________________________________________________________________________________________
+//
+//        EditorialMaterialRental rental1FromDb = erd.findById("a2586a15-1d35-4c61-8069-fd37311f2321");
+//        rental1FromDb.setReturn_date("30/08/2024");
 
-        EditorialMaterialRental rental1FromDb = erd.findById("2b36fb7b-a42a-4eae-b40e-500b5824ced4");
-        rental1FromDb.setReturn_date("22/04/2024");
-
-//        erd.save(rental1FromDb);
-
-//        Users cliente2 = ud.findById("18a82173-fb23-4503-b327-42fecaebb1cb"); // user
-//        Editoria bookrental2 = ed.findById("32099958-b5ad-40c0-b5b7-8097c072e3b6"); //BOOK or MAGAZINE
-//        EditorialMaterialRental rental2 = new EditorialMaterialRental(cliente2, bookrental2, LocalDate.of(2022, 12, 4), null, LocalDate.of(2022, 12, 9));
-//        rental1.setDue_date();
-//        System.out.println(rental2);
-//        erd.save(rental2);
+//        erd.save(rental1);
 
 //        Editoria bookfromdb = ed.findById("32099958-b5ad-40c0-b5b7-8097c072e3b6");
 //        System.out.println(bookfromdb);
@@ -187,7 +211,7 @@ public class Application {
 //        System.out.println("_____________________________All ");
 //        ed.findAllEditoria().forEach(System.out::println);
 
-//      SEARCH BY AUTHOR
+//          SEARCH BY AUTHOR
 //        ad.filtersAuthorsByName("miriana").forEach(System.out::println);
 //
 ////        DELETET BOOK FROM ISBN
@@ -196,7 +220,16 @@ public class Application {
 
 //        FIND BY ISBN
 //        ed.finByISBN("8574965123");
-        System.out.println("hello word");
+
+//        FIND ALL RENTAL MATERIALS BY CARD
+//        erd.findActiveRentalsByCardNumber(5373).forEach(System.out::println);
+
+//        ed.findByYearofPubblicaton("2004").forEach(System.out::println);
+//
+//        ed.findByTitle("b").forEach(System.out::println);
+
+//        FIND ALL ACTIV RENTAL MATERIALS
+        erd.findAllActivRentalMaterials();
 
     }
 
